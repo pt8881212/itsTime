@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An intro guide to frontend API reverse engineering </title>
+    <link rel="stylesheet" href="https://meyerweb.com/ui/meyerweb.css">
+</head>
+
+<body class="tools">
+
+    <div id="main">
+        <h1> A short guide into reverse engineering APIs! </h1>
+        <h4> Motivation </h4>
+        <p>
+            Currently, our Twitter tool relies on data fetched directly through Twitter's frontend API. This API is
+            highly volatile and is bound to change in the future. In fact, the original shadowban.eu site was deprecated
+            due to this very issue! This article will provide a foundation for tackling such tasks.
+        </p>
+
+        <h4> Background </h4>
+        <p>
+            Feel free to skip this section if you have a strong mental model of what a browser does.
+            When we visit a website, our browser requests an html page from a given server. This page then is loaded and
+            rendered by the browser, potentially resulting in further network requests for items such as images,
+            JavaScript files, etc. The twitter platform is designed in such a way that the client would make occasional
+            requests to the server for various forms of information such as Tweet data, authentication of a user, etc.
+            Our goal is to record and study the browser requests to extract essential information for reproducing such
+            requests.
+        </p>
+
+        <h4> Tools </h4>
+        <p>
+
+
+            There are numerous ways of observing requests. One can use a tool such as WireShark to directly capture
+            network packets or Puppeteer to control a "headless" version of the chromium browser via code. In our case,
+            we used Chrome's dev tools (Specifically the network tab). To start, press the F12 key and navigate to the
+            networks tab. Then, refresh your browser window either by clicking the refresh button or pressing
+            <code>Cntrl-R (Windows)</code>. Afterwards, you will be presented with many requests! Pick a request and
+            analyze its HTTP headers/payload. By studying the relationships (and lots of guessing) between the data of a
+            given request and how it is used within the obfuscated JavaScript that is present in the source tab, you may
+            notice patterns that are worthy of extraction.
+
+
+        <figure>
+            <img class="framed" src="./img/networks_tab.PNG" />
+            <figcaption>Fig.1 - Network tab</figcaption>
+        </figure>
+
+        </p>
+
+
+        <h4> Handy Features (Chrome dev tools) </h4>
+        <p>
+        <dl>
+            <dt>Network tab</dt>
+            <dd>Shows all types of requests/responses. Has powerful search functionality. </dd>
+            <dt>Sources tab</dt>
+            <dd>Presents the received source code. The built in debugger is highly beneficial when exploring.</dd>
+            <dt>Event handlers</dt>
+            <dd>One can place breakpoints for the cases when a browser event is fired. </dd>
+        </dl>
+
+        </p>
+
+        <h4> To Conclude </h4>
+        <p>
+            Studying a frontend API requires patience and a fair bit of luck. By using tools such as Chrome Dev tools,
+            one can make significant progress in the reverse engineering journey!
+        </p>
+
+        <br>
+        <br>
+    </div>
+
+</body>
+
+</html>
