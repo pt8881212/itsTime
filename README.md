@@ -20,6 +20,9 @@ This project was broken into three main components, a user-facing web frontend (
 
 This project can be further expanded by adding support for other platforms such as Facebook, Reddit, etc. The project may also require ongoing effort for the maintenance of our current data fetching mechanisms. As an ambitious goal, one may also explore the possibilities of tracking and automatically extracting valid API endpoints. 
 
+- Further processing on Twitter data
+- Automated system for generating API access-points
+
 # Setup
 
 First install node 12,
