@@ -1,5 +1,7 @@
 # itsTime
 
+## Github Link https://github.com/pt8881212/itsTime
+
 ## The Current State of Online Media Platforms
 
 Social networks are an indispensable part of our society. Such networks are no longer simply a platform for delivering content; they monitor information and censor/flag messages that they deem inappropriate. When a user violates social media’s community guidelines, their content would be either deleted or heavily censored. Such violations may also result in either a permanent user ban or the user account will be temporarily suspended for a set period (1-6 months). In some cases, the user’s profile may be shadowbanned, preventing the content from gaining traction within the user’s network. 
