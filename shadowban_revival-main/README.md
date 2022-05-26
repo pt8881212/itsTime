@@ -1,7 +1,5 @@
 # ItsTime
 
-ItsTime serves as the revival of Shadowban.eu.
-
 # Setup
 
 First install node 12,
